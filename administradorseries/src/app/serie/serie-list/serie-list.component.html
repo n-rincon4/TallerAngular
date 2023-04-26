@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row justify-content-between">
+      <div class="col-4">
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Channel</th>
+                      <th scope="col">Seasons</th>
+                  </tr>
+              </thead>
+              <tbody id="series-info" *ngFor="let serie of series">
+                <tr>
+                  <th class="firstnum" scope="row">{{serie.num}}</th>
+                  <td class="seriesname">{{serie.name}}</td>
+                  <td>{{serie.channel}}</td>
+                  <td>{{serie.seasons}}</td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+      <div>{{message}}</div>
+  </div>
+</div>
+
