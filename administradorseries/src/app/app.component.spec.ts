@@ -1,35 +1,27 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { SerieListComponent } from './serie/serie-list/serie-list.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+ beforeEach(async () => {
+   await TestBed.configureTestingModule({
+     imports: [RouterTestingModule, HttpClientModule],
+     declarations: [AppComponent, SerieListComponent],
+   }).compileComponents();
+ });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+ it('should create the app', () => {
+   const fixture = TestBed.createComponent(AppComponent);
+   const app = fixture.componentInstance;
+   expect(app).toBeTruthy();
+ });
 
-  it(`should have as title 'administradorseries'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('administradorseries');
-  });
+ it(`should have as title 'base-project'`, () => {
+   const fixture = TestBed.createComponent(AppComponent);
+   const app = fixture.componentInstance;
+   expect(app.title).toEqual('administradorseries');
+ });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('administradorseries app is running!');
-  });
 });

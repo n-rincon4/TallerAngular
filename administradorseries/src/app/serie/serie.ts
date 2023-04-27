@@ -1,19 +1,19 @@
 export class Serie {
-  public num: number;
+  public id: number;
   public name: string;
   public channel: string;
   public seasons: number;
   public description: string;
-  public link: string;
-  public picture: string;
+  public webpage: string;
+  public poster: string;
 
-  constructor(num: number, name: string, channel: string, seasons: number, description: string, link: string, picture: string) {
-      this.num = num;
+  constructor(num: number, name: string, channel: string, seasons: number, description: string, webpage: string, poster: string) {
+      this.id = num;
       this.name = name;
       this.channel = channel;
       this.seasons = seasons;
       this.description = description;
-      this.link = link;
-      this.picture = picture;
+      this.webpage = webpage;
+      this.poster = poster;
   }
 }

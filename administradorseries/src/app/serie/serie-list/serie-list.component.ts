@@ -10,20 +10,20 @@ import { SerieService } from '../serie.service';
 export class SerieListComponent implements OnInit {
 
   series: Array<Serie> = [];
-  totalSeries: number = 0;
-  average: number = 0;
   message: string = "";
   constructor(private serieService: SerieService) { }
 
   getSeries(): void {
     this.serieService.getSeries().subscribe((series) => {
       this.series = series;
-      this.series.forEach((serie) => {
-        this.totalSeries += serie.seasons;
-      });
-      this.average = this.totalSeries/series.length;
-      this.message = `Average number of seasons: ${this.average}`;
+      this.message = this.getAverageSeasons(series);
     });
+  }
+
+  getAverageSeasons(series: Serie[]): string {
+    let totalSeasons: number = 0;
+    series.forEach((serie) => totalSeasons = totalSeasons + serie.seasons);
+    return `Average number of seasons: ${totalSeasons / series.length}`;
   }
 
   ngOnInit(): void {
